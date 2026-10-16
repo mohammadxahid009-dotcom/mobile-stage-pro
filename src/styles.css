@@ -274,3 +274,22 @@ button{cursor:pointer}
 .bg-curve-top-left{top:0;left:0}.bg-curve-bottom-right{bottom:0;right:0}
 .role-card-title{margin:0;font-size:1rem;font-weight:700}.role-card-content{flex-direction:column;align-items:flex-start;gap:.15rem}
 .choose-role-container{position:relative;z-index:1}.role-card-indicator{margin-left:auto}.chevron-icon,.check-icon{width:20px;height:20px}
+/* welcome role screen (mint) */
+.choose-role-screen{--mint-ink:oklch(0.3 0.07 160);--mint-sub:oklch(0.48 0.07 165);--mint-green:oklch(0.58 0.15 155);--mint-soft:oklch(0.93 0.04 160);
+  background:radial-gradient(120% 60% at 0% 0%,oklch(0.9 0.06 158/.9),transparent 55%),radial-gradient(110% 55% at 100% 100%,oklch(0.9 0.06 158/.85),transparent 55%),linear-gradient(180deg,oklch(0.96 0.025 160),oklch(0.97 0.02 160))!important}
+.choose-role-screen .bg-curve-top-left,.choose-role-screen .bg-curve-bottom-right{display:none}
+.choose-role-screen .role-text-header{text-align:center;padding-top:2.5rem;margin-bottom:.5rem}
+.choose-role-screen .role-title{font-size:2.6rem;font-weight:800;letter-spacing:-.02em;color:var(--mint-ink)}
+.choose-role-screen .role-subtitle{font-size:1.15rem;color:var(--mint-sub);margin:.5rem 0 0}
+.choose-role-screen .role-cards-group{padding:0}
+.choose-role-screen .role-card{background:oklch(0.98 0.01 160/.85);border:1.5px solid transparent;box-shadow:0 6px 18px oklch(0.4 0.08 160/.08)}
+.choose-role-screen .role-card.selected{border-color:var(--mint-green)}
+.choose-role-screen .role-card-icon-wrap{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--mint-soft);color:var(--mint-green);flex-shrink:0}
+.choose-role-screen .role-card.selected .role-card-icon-wrap{background:var(--mint-green);color:oklch(1 0 0)}
+.choose-role-screen .role-icon{background:transparent;color:inherit;width:30px;height:30px}
+.choose-role-screen .role-card-title{color:var(--mint-ink);font-size:1.1rem}
+.choose-role-screen .role-card.selected .role-card-title{color:var(--mint-green)}
+.choose-role-screen .role-card-desc{color:var(--mint-sub);margin:0}
+.choose-role-screen .check-badge{width:28px;height:28px;border-radius:50%;background:var(--mint-green);color:oklch(1 0 0);display:grid;place-items:center}
+.choose-role-screen .check-icon{width:16px;height:16px}.choose-role-screen .chevron-icon{color:var(--mint-sub)}
+.choose-role-screen .continue-btn{width:100%;height:54px;font-size:1.1rem;background:linear-gradient(180deg,oklch(0.6 0.15 155),oklch(0.5 0.13 155));color:oklch(1 0 0);border-radius:16px}
