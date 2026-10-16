@@ -268,3 +268,9 @@ button{cursor:pointer}
 .auth-status-bar,.auth-status-icons{display:none}.auth-label{font-size:.85rem;font-weight:600}.auth-link-forgot,.auth-bottom-highlight{color:var(--primary);font-weight:600}
 .auth-bottom-row,.auth-divider-text{text-align:center;color:var(--muted-foreground);font-size:.9rem}.auth-header-wrapper{padding:1.5rem}
 .onboarding-slide-in-right{animation:slidein .3s ease}@keyframes slidein{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+.mobile-app.plain{border:0;border-radius:0;height:auto;display:block;background:var(--background);overflow:hidden}
+.choose-role-screen{padding-bottom:0;min-height:100svh}
+.bg-curve-top-left,.bg-curve-bottom-right{position:absolute;pointer-events:none;width:60%;opacity:.5}
+.bg-curve-top-left{top:0;left:0}.bg-curve-bottom-right{bottom:0;right:0}
+.role-card-title{margin:0;font-size:1rem;font-weight:700}.role-card-content{flex-direction:column;align-items:flex-start;gap:.15rem}
+.choose-role-container{position:relative;z-index:1}.role-card-indicator{margin-left:auto}.chevron-icon,.check-icon{width:20px;height:20px}
