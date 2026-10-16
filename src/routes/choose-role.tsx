@@ -132,11 +132,8 @@ export function ChooseRolePage({
             <main className="choose-role-container">
               {/* Title & Subtitle */}
               <div className="role-text-header">
-                <h1 className="role-title">Choose Your Role</h1>
-                <p className="role-subtitle">
-                  Tell us how you want to use the app. This helps us show you
-                  the right features and opportunities.
-                </p>
+                <h1 className="role-title">Welcome</h1>
+                <p className="role-subtitle">Great to see you again!</p>
               </div>
 
               {/* Role Selection Cards */}
