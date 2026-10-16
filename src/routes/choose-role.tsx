@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight, ChevronDown, User, CalendarDays, VenusAndMars } from "lucide-react";
+import { toast } from "sonner";
 import { AuthScreen } from "@/components/auth-screen";
 import {
   getStoredUser,
@@ -32,6 +33,9 @@ export function ChooseRolePage({
   const [step, setStep] = useState<"role" | "auth">("role");
   const [selectedRole, setSelectedRole] = useState<RoleOption>("provider");
   const [slideDirection, setSlideDirection] = useState<"right" | "left">("right");
+  const [username, setUsername] = useState("");
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState("");
   const navigate = useNavigate();
 
   // If user is already logged in, respect their role
@@ -51,6 +55,16 @@ export function ChooseRolePage({
   }, [navigate, onRoleChosen]);
 
   const handleContinue = () => {
+    if (!username.trim() || !age || !gender) {
+      toast.error("Please enter a username, age and gender.");
+      return;
+    }
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem(
+        "signup_profile",
+        JSON.stringify({ username: username.trim(), age, gender }),
+      );
+    }
     if (typeof window !== "undefined") {
       sessionStorage.setItem("selected_role", selectedRole);
     }
@@ -221,6 +235,53 @@ export function ChooseRolePage({
                 </button>
               </div>
 
+              <section className="role-form">
+                <h2 className="role-form-title">Create Your Account</h2>
+                <p className="role-form-sub">
+                  Choose a username and add a few details to get started.
+                </p>
+                <div className="role-field">
+                  <User className="role-field-icon" />
+                  <input
+                    className="role-field-input"
+                    placeholder="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    autoComplete="username"
+                  />
+                </div>
+                <div className="role-field">
+                  <CalendarDays className="role-field-icon" />
+                  <select
+                    className="role-field-input"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                    aria-label="Age"
+                  >
+                    <option value="">Age</option>
+                    {Array.from({ length: 83 }, (_, i) => i + 18).map((n) => (
+                      <option key={n} value={String(n)}>{n}</option>
+                    ))}
+                  </select>
+                  <ChevronDown className="role-field-chev" />
+                </div>
+                <div className="role-field">
+                  <VenusAndMars className="role-field-icon" />
+                  <select
+                    className="role-field-input"
+                    value={gender}
+                    onChange={(e) => setGender(e.target.value)}
+                    aria-label="Gender"
+                  >
+                    <option value="">Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <ChevronDown className="role-field-chev" />
+                </div>
+              </section>
+
               {/* Continue Action Button */}
               <div className="role-action-area">
                 <button
@@ -230,6 +291,12 @@ export function ChooseRolePage({
                 >
                   Continue
                 </button>
+                <p className="role-login-row">
+                  Already have an account?{" "}
+                  <button type="button" onClick={() => { setSlideDirection("right"); setStep("auth"); }}>
+                    Log In
+                  </button>
+                </p>
               </div>
             </main>
           </div>

@@ -276,7 +276,7 @@ button{cursor:pointer}
 .choose-role-container{position:relative;z-index:1}.role-card-indicator{margin-left:auto}.chevron-icon,.check-icon{width:20px;height:20px}
 /* welcome role screen (mint) */
 .choose-role-screen{--mint-ink:oklch(0.3 0.07 160);--mint-sub:oklch(0.48 0.07 165);--mint-green:oklch(0.58 0.15 155);--mint-soft:oklch(0.93 0.04 160);
-  background:radial-gradient(120% 60% at 0% 0%,oklch(0.9 0.06 158/.9),transparent 55%),radial-gradient(110% 55% at 100% 100%,oklch(0.9 0.06 158/.85),transparent 55%),linear-gradient(180deg,oklch(0.96 0.025 160),oklch(0.97 0.02 160))!important}
+  background:radial-gradient(90% 38% at 0% 0%,oklch(0.9 0.08 158),transparent 70%),radial-gradient(60% 30% at 100% 22%,oklch(0.92 0.06 158/.8),transparent 70%),radial-gradient(100% 38% at 100% 100%,oklch(0.88 0.09 156),transparent 70%),radial-gradient(70% 25% at 0% 90%,oklch(0.95 0.04 158),transparent 70%),linear-gradient(180deg,oklch(0.96 0.03 160),oklch(0.975 0.015 160) 60%,oklch(0.95 0.035 158))!important;padding-bottom:1.5rem}
 .choose-role-screen .bg-curve-top-left,.choose-role-screen .bg-curve-bottom-right{display:none}
 .choose-role-screen .role-text-header{text-align:center;padding-top:2.5rem;margin-bottom:.5rem}
 .choose-role-screen .role-title{font-size:2.6rem;font-weight:800;letter-spacing:-.02em;color:var(--mint-ink)}
@@ -293,3 +293,14 @@ button{cursor:pointer}
 .choose-role-screen .check-badge{width:28px;height:28px;border-radius:50%;background:var(--mint-green);color:oklch(1 0 0);display:grid;place-items:center}
 .choose-role-screen .check-icon{width:16px;height:16px}.choose-role-screen .chevron-icon{color:var(--mint-sub)}
 .choose-role-screen .continue-btn{width:100%;height:54px;font-size:1.1rem;background:linear-gradient(180deg,oklch(0.6 0.15 155),oklch(0.5 0.13 155));color:oklch(1 0 0);border-radius:16px}
+
+.choose-role-screen .role-form{display:flex;flex-direction:column;gap:.75rem;margin-top:.5rem}
+.role-form-title{margin:0;font-size:1.5rem;font-weight:800;color:var(--mint-ink)}
+.role-form-sub{margin:0 0 .25rem;color:var(--mint-sub);font-size:1rem}
+.role-field{position:relative;display:flex;align-items:center;height:56px;border-radius:18px;background:oklch(0.98 0.01 160/.85);box-shadow:0 4px 14px oklch(0.4 0.08 160/.07)}
+.role-field-icon{position:absolute;left:16px;width:24px;height:24px;color:var(--mint-green)}
+.role-field::before{content:"";position:absolute;left:52px;top:30%;height:40%;width:1px;background:oklch(0.85 0.03 160)}
+.role-field-input{width:100%;height:100%;border:0;background:transparent;padding:0 2.5rem 0 66px;font-size:1rem;color:var(--mint-ink);appearance:none;outline:none}
+.role-field-chev{position:absolute;right:16px;width:20px;color:var(--mint-sub);pointer-events:none}
+.role-login-row{text-align:center;color:var(--mint-sub);font-size:.9rem;margin:1rem 0 0}
+.role-login-row button{color:var(--mint-green);font-weight:700;background:none;border:0}
