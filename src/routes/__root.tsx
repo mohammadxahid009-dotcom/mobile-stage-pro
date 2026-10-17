@@ -21,6 +21,8 @@ import {
 } from "@/lib/firebase";
 import { ChooseRolePage } from "./choose-role";
 
+const AUTH_DISABLED = true;
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -225,7 +227,8 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <StoreProvider>
         {/* Protected by GlobalAuthGate: nobody can enter without logging in */}
-        <GlobalAuthGate />
+        {/* Login temporarily disabled for previewing. Restore: <GlobalAuthGate /> */}
+        {AUTH_DISABLED ? <Outlet /> : <GlobalAuthGate />}
         <Toaster position="top-center" />
       </StoreProvider>
     </QueryClientProvider>
